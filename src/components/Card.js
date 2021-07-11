@@ -2,7 +2,7 @@ import React , {useState} from 'react';
 import{Card, Typography, CardContent, CardActions, Button, Grid, DialogContentText,Dialog, DialogTitle} from '@material-ui/core'
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-
+import Img from '../img/vs-1.png';
 
 import {getMatchDetail} from '../api/Api';
 
@@ -22,18 +22,22 @@ const GetCards = ({match}) => {
    }
     const getMatchesCard = () => {
         return(
-            <Card style={{marginTop: 15}}>
+            <Card style={{
+                background: match.matchStarted ? "White" : "grey",
+                marginTop: 15,
+              }}>
                 <CardContent>
                     <Grid container justify="center" alignItems="center" spacing={4}>
                        <Grid item variant="h5">
                            <Typography>{match["team-1"]}</Typography>
+                           {/* <Typography>{detail.score}</Typography> */}
                        </Grid>
                        <Grid item>
-                     <img src={require("../img/vs-1.png")}  style={{width: 85}} alt="vs logo" />
-                
+                       <img src={Img}  style={{width: 85}} />
                        </Grid>
                        <Grid item variant="h5">
                        <Typography>{match["team-2"]}</Typography>
+                       {/* <Typography>{detail.score}</Typography> */}
                        </Grid>
                     </Grid>
                 </CardContent>
