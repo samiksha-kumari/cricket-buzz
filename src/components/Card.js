@@ -37,6 +37,15 @@ const GetCards = ({match}) => {
                        </Grid>
                     </Grid>
                 </CardContent>
+                <Typography>
+                {match.matchStarted  ? (
+                     <React.Fragment>
+               <br/><span style={{fontStyle: 'italic', fontWeight: 'bold'}}>
+                {match["winner_team"]} Won
+                     </span>
+                     </React.Fragment>
+                ) : 'match not started'} 
+                </Typography>   
                 <CardActions>
                     <Grid container justify="center">
                     <Button variant="outlined" color="primary" onClick={() =>{
